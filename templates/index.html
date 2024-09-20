@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Image upload</title>
+    <style>
+        body {
+            font-family:Arial, sans-serif;
+            text-align:center;
+            padding:50px;
+        }
+        form {
+            margin : 20px 0;
+        }
+        .image-display {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>
+    upload and display image
+</h1>
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" accept="image/*">
+    <button type="submit">Upload</button>
+</form>
+{% if process_img_url %}
+<div class="image-display">
+    <h2>Uploaded Image:</h2>
+    <img src="{{ process_img_url }}" alt="uploaded image" width="600">
+</div>
+{% endif %}
+</body>
+</html>
